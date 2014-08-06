@@ -21,7 +21,7 @@ class sendMail:
 		mime['TO'] = to
 		mime['FROM'] = self.__FROM
 		mime['SUBJECT'] = subject
-		server = smtplib.SMTP_SSL(self.__Server)
+		server = smtplib.SMTP_SSL(self.__SERVER)
 		server.login(self.__USER, self.__PASSWD)
 		server.sendmail(self.__FROM, [to], mime.as_string())
 		server.quit()
