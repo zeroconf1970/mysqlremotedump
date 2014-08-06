@@ -6,6 +6,7 @@ import sys
 import time
 import smtplib
 from email.mime.text import MIMEText
+import sendmail
 
 class backup:
 
@@ -13,6 +14,8 @@ class backup:
 		self.__cfg = configparser.ConfigParser()
 		self.__cfg.read('config.ini')
 		self.__loadEmailServerConfig()
+		self.__TO = self.__cfg['DEFAULT']['TO']
+		self.__Subject = self.__cfg['DEFAULT']['SUBJECT']
 		self.__backuppath = self.__readBackupPath()
 		self.__configpath = self.__configPath()
 
