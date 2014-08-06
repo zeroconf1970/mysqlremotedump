@@ -1,0 +1,9 @@
+[DEFAULT]
+BACKUPDIR = 
+CONFIGDIR = 
+[MAIL]
+SERVER =
+FROM =
+USER = 
+PASSWD = 
+SUBJECT = Error with Mysql BackupSystem
