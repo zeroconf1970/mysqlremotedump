@@ -35,6 +35,15 @@ class backup:
 		else:
 			 return self.__cfg['DEFAULT']['BACKUPDIR']
 
+	def load(self):
+		pass
+
+	def maintenance(self):
+		pass
+
+	def backup(self):
+		pass
+
 if __name__ == "__main__":
 	a = backup()
 	a.load()
