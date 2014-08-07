@@ -30,7 +30,7 @@ class dump:
 		if not(os.path.exists(os.path.join(self.__path, self.__sshHost))):
 			os.makedirs(os.path.join(self.__path, self.__sshHost))
 
-	def mainenance(self):
+	def maintenance(self):
 		pass
 
 	def backup(self):

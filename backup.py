@@ -7,6 +7,8 @@ import time
 import smtplib
 from email.mime.text import MIMEText
 import sendmail
+import os
+import dump
 
 class backup:
 
@@ -36,13 +38,18 @@ class backup:
 			 return self.__cfg['DEFAULT']['BACKUPDIR']
 
 	def load(self):
-		pass
+		self.__p = []
+		dirList = os.listdir(self.__configpath)
+		for i in dirList:
+			self.__p.append(dump.dump(self.__backuppath,os.path.join(self.__configpath, i), self.__mailer))
 
 	def maintenance(self):
-		pass
+		for i in self.__p:
+			i.maintenance()
 
 	def backup(self):
-		pass
+		for i in self.__p:
+			i.backup()
 
 if __name__ == "__main__":
 	a = backup()
